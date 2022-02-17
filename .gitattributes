@@ -1,3 +1,4 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-*.rb linguist-language=PHP
+assets/* linguist-vendored
+views/* linguist-vendored
