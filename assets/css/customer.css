@@ -1,0 +1,190 @@
+*{
+    margin : 0;
+    padding : 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.inline{
+    display:inline-block;
+    vertical-align: middle;
+}
+.main{
+    color:white;
+    background-color:mediumblue;
+    height:100%;
+    position: fixed;
+    width: 100%;
+    display: table;
+    vertical-align: middle;
+}
+.main > div{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.main > div > div{
+    display: inline-block;
+    vertical-align: top; 
+}
+.dsa0{
+    text-align:left; 
+    margin-bottom: -10px;
+}
+.dsa1{
+    margin-right:10px;
+    width:7px;
+    height:80px;
+    background-color:crimson;
+}
+.dsa2{
+    font-family: 'Raleway', sans-serif; 
+    font-size: 26px;
+}
+.dsa3{
+    font-size:51px;
+    font-family: 'Raleway', sans-serif;
+}
+.asd0{
+    background-color:white;
+    border-radius: 10px; 
+    padding:25px; 
+    box-shadow: 0 2px 3px 1px rgba(0, 0, 0, .2), 0 2px 4px 1px rgba(0, 0, 0, .2);
+}
+.asd1{
+    font-family: 'Raleway', sans-serif; 
+    text-align: left; 
+    color:#222; 
+    margin-bottom:10px;
+    font-size:20px;
+}
+.asd2{
+    border:none;
+    background-color:#eee;
+    padding: 7px 20px;
+    box-sizing: border-box;
+    font-weight: 500;
+    font-size: 2em;
+    outline: none;
+    border: none;
+    border-top: 1px inset #eee;
+    
+}
+.asd3{
+    font-family: 'Raleway', sans-serif; 
+    background-color:crimson;
+    color:white;
+    border:none;
+    padding:10px 50px;
+    font-size:20px;
+    border-radius: 100px;
+    outline: none;
+    cursor: pointer;
+}
+.asd3:active{
+    color:lavender;
+}
+
+.modal-error{
+    text-align: center; 
+    margin: 15px;
+}
+.modal-error > div{
+    font-family: 'Raleway', sans-serif;
+}
+.modal-error > div:nth-child(1){
+    font-size:73px;
+}
+.modal-error > div:nth-child(2){
+    font-size:20px;
+}
+#modal-frame{
+    z-index:1;
+    background-color: rgba(0,0,0,.8);
+}
+#close-button{
+    text-align:right;
+    color:crimson;
+    font-size: 50px;
+    cursor: pointer;
+}
+.sad0{
+    color:mediumblue; 
+    text-align: left;
+    font-family: 'Raleway', sans-serif; 
+    font-size:30px;
+}
+.sad1{
+    background-color:mediumblue; 
+    color: mediumblue;
+    border: none;
+    height:2px;
+}
+.sad2{
+    color:#222;
+    font-weight: 500;
+    text-align: left;
+    padding:15px;
+    width:380px;
+}
+.modal-content{
+    width:100%;
+}
+.modal-content tr td:nth-child(1){
+    width:50%;
+}
+@media screen and (max-width: 480px){
+    .dsa0{
+        margin-bottom: -15px;
+    }
+    .dsa1{
+        height:47px;
+        width:4px;
+        margin-right:3px;
+    }
+    .dsa2{
+        font-size: 15px;;
+    }
+    .dsa3{
+        font-size:30px;
+    }
+    .asd0{
+        padding:10px;
+    }
+    .asd1{
+        font-size:10px;
+    }
+    .asd2{
+        width:100%;
+        padding: 2px 10px;
+        font-size: 1em;
+    }
+    .asd3{
+        padding:7px 30px;
+        font-size:13px;
+        border-radius: 100px;
+    }
+    .sad0{
+        font-size:18px;
+    }
+    .sad2{
+        width:200px;
+        padding:10px;
+    }
+    .modal-error{
+        margin: 10px;
+    }
+    .modal-error > div:nth-child(1){
+        font-size:44px;
+    }
+    .modal-error > div:nth-child(2){
+        font-size:12px;
+    }
+    #close-button{
+        font-size: 40px;
+    }
+    .modal-content{
+        font-size:13px;
+    }
+    .modal-content tr td:nth-child(1){
+        width:0;    
+    }
+}

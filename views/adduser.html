@@ -5,85 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Penguin Logistics</title>
     <link href="/assets/css/style.css" rel="stylesheet"/>
+    <link href="/assets/css/adduser.css" rel="stylesheet"/>
     <link rel="icon" href="/assets/img/logo2.png">
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
-    <style>
-        .main{
-            color:white;
-            background-color:mediumblue;
-            height:100%;
-            position: fixed;
-            width: 100%;
-            display: table;
-            vertical-align: middle;
-        }
-        .main > div{
-            display: table-cell;
-            text-align: center;
-            vertical-align: middle;
-        }
-        .main > div > div{
-            display: inline-block;
-            vertical-align: top; 
-        }
-        .dsa0{
-            text-align:left; 
-            margin-bottom: -10px;
-        }
-        .dsa1{
-            margin-right:10px;
-            width:7px;
-            height:80px;
-            background-color:crimson;
-        }
-        .dsa2{
-            font-family: 'Raleway', sans-serif; 
-            font-size: 24px;
-        }
-        .dsa3{
-            font-size:51px;
-            font-family: 'Raleway', sans-serif;
-        }
-        .asd0{
-            background-color:white;
-            border-radius: 10px; 
-            padding:25px; 
-            box-shadow: 0 2px 3px 1px rgba(0, 0, 0, .2), 0 2px 4px 1px rgba(0, 0, 0, .2);
-        }
-        .asd1{
-            font-family: 'Raleway', sans-serif; 
-            text-align: left; 
-            color:#222; 
-            margin-bottom:10px;
-            font-size:20px;
-        }
-        .asd2{
-            border:none;
-            background-color:#eee;
-            padding: 7px 20px;
-            box-sizing: border-box;
-            font-weight: 500;
-            font-size: 20px;
-            outline: none;
-            border: none;
-            border-top: 1px inset #eee;
-            width:100%;
-        }
-        .asd3{
-            font-family: 'Raleway', sans-serif; 
-            background-color:crimson;
-            color:white;
-            border:none;
-            padding:10px 50px;
-            font-size:20px;
-            border-radius: 100px;
-            outline: none;
-            cursor: pointer;
-        }
-        .asd3:active{
-            color:lavender;
-        }
-    </style>
 </head>
 <body>
     <div class="main">
@@ -118,29 +42,5 @@
     </div>
 </body>
 <script src="/assets/js/lib.js"></script>
-<script>
-    var selectProvinsi = document.getElementById("provinsi");
-    var selectKota = document.getElementById("kota");
-    sendAjax("GET", "/provinsi", false, false, false, function(data){
-        data = JSON.parse(data);
-        data = data.provinsi;
-        var str = ""
-        for(var i = 0; i < data.length; i++){
-            str += '<option value="'+ data[i].id +'">'+ data[i].nama +'</option>';
-        }
-        selectProvinsi.innerHTML = str;
-    })
-    selectProvinsi.onchange = function(e){
-        sendAjax("GET", "/kota/" + selectProvinsi.value, false, false, false, function(data){
-            data = JSON.parse(data);
-            data = data.kota_kabupaten;
-            var str = ""
-            for(var i = 0; i < data.length; i++){
-                str += '<option value="'+ data[i].nama +'">'+ data[i].nama +'</option>';
-            }
-            selectKota.innerHTML = str;
-        })
-    }
-    
-</script>
+<script src="/assets/js/adduser.js"></script>
 </html>

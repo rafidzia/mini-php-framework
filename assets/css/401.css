@@ -1,0 +1,44 @@
+.inline{
+    display:inline-block;
+    vertical-align: middle;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+.main{
+    color:white;
+    background-color:mediumblue;
+    height:100%;
+    position: fixed;
+    width: 100%;
+    display: table;
+    vertical-align: middle;
+}
+.main > div{
+    display: table-cell;
+    text-align: center;
+    vertical-align: middle;
+}
+.main > div > div{
+    display: inline-block;
+    vertical-align: top; 
+}
+.dsa0{
+    text-align:left; 
+    margin-bottom: -10px;
+}
+.dsa1{
+    margin-right:10px;
+    width:7px;
+    height:150px;
+    background-color:crimson;
+}
+.dsa2{
+    font-family: 'Raleway', sans-serif; 
+    font-size: 15px;
+}
+.dsa3{
+    font-size:105px;
+    font-family: 'Raleway', sans-serif;
+}
