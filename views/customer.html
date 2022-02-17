@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penguin Logistics</title>
+    <link href="/assets/css/style.css" rel="stylesheet"/>
+    <link rel="icon" href="/assets/img/logo2.png">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@800&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin : 0;
+            padding : 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .inline{
+            display:inline-block;
+            vertical-align: middle;
+        }
+        .main{
+            color:white;
+            background-color:mediumblue;
+            height:100%;
+            position: fixed;
+            width: 100%;
+            display: table;
+            vertical-align: middle;
+        }
+        .main > div{
+            display: table-cell;
+            text-align: center;
+            vertical-align: middle;
+        }
+        .main > div > div{
+            display: inline-block;
+            vertical-align: top; 
+        }
+        .dsa0{
+            text-align:left; 
+            margin-bottom: -10px;
+        }
+        .dsa1{
+            margin-right:10px;
+            width:7px;
+            height:80px;
+            background-color:crimson;
+        }
+        .dsa2{
+            font-family: 'Raleway', sans-serif; 
+            font-size: 26px;
+        }
+        .dsa3{
+            font-size:51px;
+            font-family: 'Raleway', sans-serif;
+        }
+        .asd0{
+            background-color:white;
+            border-radius: 10px; 
+            padding:25px; 
+            box-shadow: 0 2px 3px 1px rgba(0, 0, 0, .2), 0 2px 4px 1px rgba(0, 0, 0, .2);
+        }
+        .asd1{
+            font-family: 'Raleway', sans-serif; 
+            text-align: left; 
+            color:#222; 
+            margin-bottom:10px;
+            font-size:20px;
+        }
+        .asd2{
+            border:none;
+            background-color:#eee;
+            padding: 7px 20px;
+            box-sizing: border-box;
+            font-weight: 500;
+            font-size: 2em;
+            outline: none;
+            border: none;
+            border-top: 1px inset #eee;
+            
+        }
+        .asd3{
+            font-family: 'Raleway', sans-serif; 
+            background-color:crimson;
+            color:white;
+            border:none;
+            padding:10px 50px;
+            font-size:20px;
+            border-radius: 100px;
+            outline: none;
+            cursor: pointer;
+        }
+        .asd3:active{
+            color:lavender;
+        }
+
+        .modal-error{
+            text-align: center; 
+            margin: 15px;
+        }
+        .modal-error > div{
+            font-family: 'Raleway', sans-serif;
+        }
+        .modal-error > div:nth-child(1){
+            font-size:73px;
+        }
+        .modal-error > div:nth-child(2){
+            font-size:20px;
+        }
+        #modal-frame{
+            z-index:1;
+            background-color: rgba(0,0,0,.8);
+        }
+        #close-button{
+            text-align:right;
+            color:crimson;
+            font-size: 50px;
+            cursor: pointer;
+        }
+        .sad0{
+            color:mediumblue; 
+            text-align: left;
+            font-family: 'Raleway', sans-serif; 
+            font-size:30px;
+        }
+        .sad1{
+            background-color:mediumblue; 
+            color: mediumblue;
+            border: none;
+            height:2px;
+        }
+        .sad2{
+            color:#222;
+            font-weight: 500;
+            text-align: left;
+            padding:15px;
+            width:380px;
+        }
+        .modal-content{
+            width:100%;
+        }
+        .modal-content tr td:nth-child(1){
+            width:50%;
+        }
+        @media screen and (max-width: 480px){
+            .dsa0{
+                margin-bottom: -15px;
+            }
+            .dsa1{
+                height:47px;
+                width:4px;
+                margin-right:3px;
+            }
+            .dsa2{
+                font-size: 15px;;
+            }
+            .dsa3{
+                font-size:30px;
+            }
+            .asd0{
+                padding:10px;
+            }
+            .asd1{
+                font-size:10px;
+            }
+            .asd2{
+                width:100%;
+                padding: 2px 10px;
+                font-size: 1em;
+            }
+            .asd3{
+                padding:7px 30px;
+                font-size:13px;
+                border-radius: 100px;
+            }
+            .sad0{
+                font-size:18px;
+            }
+            .sad2{
+                width:200px;
+                padding:10px;
+            }
+            .modal-error{
+                margin: 10px;
+            }
+            .modal-error > div:nth-child(1){
+                font-size:44px;
+            }
+            .modal-error > div:nth-child(2){
+                font-size:12px;
+            }
+            #close-button{
+                font-size: 40px;
+            }
+            .modal-content{
+                font-size:13px;
+            }
+            .modal-content tr td:nth-child(1){
+                width:0;    
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="modal-frame" class="main" style="display:none">
+        <div>
+            <div>
+                <div id="close-button">&#10006;</div>
+                <div class="asd0">
+                    <div class="sad0">RESULT</div>
+                    <hr class="sad1"/>
+                    <div id="modal-window" class="sad2">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <img style="position:fixed; height:100%;z-index: -1;" src="/assets/img/logo1.png" alt="">
+        <div>
+            <div>
+                <div class="dsa0">
+                    <div class="inline dsa1"></div>
+                    <div class="inline"><span class="dsa2">PENGUIN LOGISTICS</span><br/><span class="dsa3">TRACKING</span></div>
+                </div>
+                <br/>
+                <div class="asd0">
+                    <form id="form-track">
+                        <div class="asd1">ENTER YOUR TRACK NUMBER</div>
+                        <input id="input-track" class="asd2"><br/><br/>
+                        <button type="submit" class="asd3">TRACK</button><br/><br/>
+                    </form>
+                </div>
+                <div style="color:white;margin-top: 10px;">Or Sign In <a href="/admin" style="text-decoration: none;color:crimson;cursor:pointer;">Here</a> as Admin and <a href="/postman" style="text-decoration: none;color:crimson;cursor:pointer;">Here</a> as Postman</div>
+            </div>
+        </div>
+    </div>
+    <template id="error-template">
+        <div class="modal-error">
+            <div>ERROR : </div>
+            <div>INVALID TRACKING NUMBER</div>
+        </div>
+    </template>
+    <script src="/assets/js/lib.js"></script>
+    <script>
+        document.getElementById("input-track").onkeypress = function(e){return (e.charCode > 47 && e.charCode < 58)}
+        var modalF = document.getElementById("modal-frame");
+        var closeB = document.getElementById("close-button");
+        closeB.onclick = function(e){
+            modalF.style.display = "none";
+        }
+        document.getElementById("form-track").onsubmit = function(e){
+            e.preventDefault();
+        }
+        document.getElementsByTagName("button")[0].onclick = function(e){
+            sendAjax("POST", "/", true, false, JSON.stringify({tracknum : document.getElementById("input-track").value}), function(data){
+                data = JSON.parse(data);
+                addData(data);
+            });
+        }
+        function addData(data){
+            if(data.length > 0){
+                var resultString;
+                for(var i = 0; i < data.length; i++){
+                    resultString = '<table class="modal-content"><tr><td>TRACKING NUMBER</td><td> : </td><td>'+ data[i].id +'</td></tr>'+
+                                '<tr><td>DESTINATION</td><td> : </td><td>'+ data[i].destination +'</td></tr>'+
+                                '<tr><td>LOCATION</td><td> : </td><td>'+ data[i].location +'</td></tr>'+
+                                '<tr><td>ADDRESS</td><td> : </td><td>'+ data[i].address +'</td></tr>'+
+                                '<tr><td>LAST UPDATE</td><td> : </td><td>'+ data[i].updated_at +'</td></tr>'+
+                                '</table>';
+                    document.getElementById("modal-window").innerHTML = resultString;  
+                }
+            }else{
+                var temp = document.getElementById("error-template");
+                var clon = temp.content.cloneNode(true);
+                document.getElementById("modal-window").innerHTML = "";
+                document.getElementById("modal-window").appendChild(clon);
+            }
+            modalF.style.display = "";
+            
+        }
+        
+    </script>
+</body>
+</html>
